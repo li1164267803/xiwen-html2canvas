@@ -58,7 +58,7 @@ import html2canvas from 'html2canvas';
 
 ## 必须要把文件下载到本地
 
-**[点击此链接手动下载 html2canvas 到本地项目](https://github.com/li1164267803/xiwen-html2canvas)**
+**[点击此链接手动下载 html2canvas 到本地项目](https://github.com/li1164267803/xiwen-html2canvas/tree/master/dist)**
 
 ## 使用
 
@@ -80,5 +80,5 @@ html2canvas(document.querySelector(".report"), {
 1.  有一些 css 样式没有办法直接识别，比如新增的 css，渐变，或者是 border-radius: 50%; 是没有效果的，必须要写成固定的数值才可以，正确写法：border-radius: 50px
 2.  如果你项目的背景色默认是白色的，你自己也没有给项目添加颜色，生成后的图片就是带透明效果，所以要给 html 添加一个白色背景颜色
 3.  第一种方法不需要自己单独下载 js 到本地项目中，第二种方法需要单独下载 js 文件
-4.  **都看到这里麻烦给点个小赞，在 github 上点个 star，附带使用方法和支持 html2canvas 的源码**👉
-    [https://github.com/li1164267803/xiwen-html2canvas](https://github.com/li1164267803/xiwen-html2canvas)
+4.  **都看到这里麻烦给点个小赞，在 github 上点个 star，附带支持 dpi 修改清晰度 html2canvas 的源码**👉
+    [https://github.com/li1164267803/xiwen-html2canvas/tree/master/dist](https://github.com/li1164267803/xiwen-html2canvas/tree/master/dist)

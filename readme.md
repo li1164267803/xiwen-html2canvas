@@ -13,8 +13,8 @@ import html2canvas from 'html2canvas';
       }
       return 1;
     },
-    async drawCanvas() {
-        await setTimeout(() => {
+    drawCanvas() {
+        setTimeout(() => {
           // 获取想要转换的 DOM 节点
           const dom = document.querySelector('.report');
           const box = window.getComputedStyle(dom);
@@ -66,10 +66,21 @@ import html2canvas from 'html2canvas';
 import "@/assets/js/html2canvas.js"; // 引入刚刚自己下载的js文件
 // 调用的方法
 html2canvas(document.querySelector(".report"), {
+    // 以下字段可选
+    width: 490, // canvas宽度
+    height: 240, // canvas高度
+    x: 0, // x坐标
+    y: 0, // y坐标
+    foreignObjectRendering: true, // 是否在浏览器支持的情况下使用ForeignObject渲染
+    useCORS: true, // 是否尝试使用CORS从服务器加载图像
+    async: false, // 是否异步解析和呈现元素
+    // 以下字段必填
     background: "#ffffff", // 一定要添加背景颜色，否则出来的图片，背景全部都是透明的
-    dpi: 300,
-    onrendered: function (image) {
-        let url = image.toDataURL();
+    dpi: 300, // 处理模糊问题
+    onrendered: function (canvas) {
+        // https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL
+        // let url = canvas.toDataURL('image/png', 1.0)
+        let url = canvas.toDataURL();
         console.log(url);
     },
 });
@@ -82,3 +93,4 @@ html2canvas(document.querySelector(".report"), {
 3.  第一种方法不需要自己单独下载 js 到本地项目中，第二种方法需要单独下载 js 文件
 4.  **都看到这里麻烦给点个小赞，在 github 上点个 star，附带支持 dpi 修改清晰度 html2canvas 的源码**👉
     [https://github.com/li1164267803/xiwen-html2canvas/tree/master/dist](https://github.com/li1164267803/xiwen-html2canvas/tree/master/dist)
+5.  Blog:[https://blog.csdn.net/weixin_44309374/article/details/106924138](https://blog.csdn.net/weixin_44309374/article/details/106924138)
